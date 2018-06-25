@@ -11,13 +11,13 @@ const app               = express();
 
 process.env.JWT_KEY = 'secret_key';
 
-mongoose.Promise = global.Promise;
+/* mongoose.Promise = global.Promise;
 mongoose.connect(DB);
 mongoose.connection.once('open', () => {
     console.log("Database connection was succesfull");
 }).on('error', (error) =>{
     console.log("Connection error " + error );
-});
+}); */
 
 //CORS && CORBS
 app.use((req, res, next) => {   
