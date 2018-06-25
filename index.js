@@ -2,9 +2,7 @@ const express           = require('express');
 const jwt               = require('jsonwebtoken');
 const morgan            = require('morgan');
 const mongoose          = require('mongoose');
-const cors              = require('./cors');
 const path              = require('path');
-const server            = require('./server');
 const DB                = process.env.MONGODB_URI;
 const PORT              = process.env.PORT || 5000; 
 const app               = express();
@@ -32,7 +30,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.use('/posts', require('./routes/posts'));
 app.use('/users', require('./routes/users'));
 
 app.get('/*', function(req,res) {
